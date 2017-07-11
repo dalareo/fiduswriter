@@ -19,3 +19,4 @@ ADD . /code
 RUN cp configuration.py-default configuration.py
 
 RUN ./manage.py init
+
