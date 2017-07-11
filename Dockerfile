@@ -4,7 +4,7 @@ MAINTAINER David A. Lareo <dalareo@gmail.com>
 EXPOSE 8000
 
 RUN apt-get update
-RUN apt-get install -y libjpeg-dev gettext zlib1g-dev npm nodejs nodejs-legacy
+RUN apt-get install -y libjpeg-dev gettext zlib1g-dev npm nodejs nodejs-legacy libpq-dev
 
 RUN mkdir /code
 WORKDIR /code
@@ -14,6 +14,7 @@ VOLUME ["/code"]
 
 ADD requirements.txt /code/
 RUN pip install -r requirements.txt
+RUN pip install -r postgresql-requirements.txt
 
 ADD . /code
 RUN cp configuration.py-default configuration.py
