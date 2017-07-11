@@ -13,7 +13,7 @@ RUN mkdir static-libs
 VOLUME ["/code"]
 
 ADD requirements.txt /code/
-ADD postgresql-requirements.txt
+ADD postgresql-requirements.txt /code/
 
 RUN pip install -r requirements.txt
 RUN pip install -r postgresql-requirements.txt
