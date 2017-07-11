@@ -17,6 +17,8 @@ services:
         # image: dalareo/fiduswriter
         build: .
         stdin_open: true
+        ports:
+          - 8000:8000
         links:
           - postgresql
         volumes:

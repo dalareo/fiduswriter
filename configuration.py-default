@@ -32,7 +32,7 @@ WORLDCAT_KEY = False
 SOWIPORT_KEY = False
 
 ADMINS = (
-    (os.environ.get('ADMIN_NAME'), 'os.environ.get('CONTACT_MAIL', ''),
+    (os.environ.get('ADMIN_NAME'), os.environ.get('CONTACT_MAIL', ''),
 )
 
 MANAGERS = ADMINS
@@ -53,8 +53,8 @@ DATABASES = {
 # The max time in seconds a database connection should wait for a subsequent
 # request.
 #        'CONN_MAX_AGE': 15
-#    }
-# }
+   }
+}
 
 # Send emails using an SMTP server
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

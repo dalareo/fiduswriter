@@ -67,7 +67,7 @@ class Command(BaseCommand):
             print("Cleaning npm cache")
             call(["npm", "cache", "clean"])  # Not use Pm from git w/ same ver.
             print("Installing dependencies")
-            call(["npm", "install"])
+            call(["npm", "install", "--unsafe-perm"])
             # Copy the package.json file to node_modules, so we can compare it
             # to the current version next time we run it.
             call(["cp", "package.json", "node_modules"])
@@ -81,7 +81,7 @@ class Command(BaseCommand):
             #        os.path.join(
             #            PROJECT_PATH,
             #            "node_modules/prosemirror"))
-            #    call(["npm", "install"])
+            #    call(["npm", "install", "--unsafe-perm")
             #    call(["npm", "run", "dist"])
             #    shutil.os.chdir(os.path.join(PROJECT_PATH))
 
