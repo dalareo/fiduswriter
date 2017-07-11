@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+    postgresql:
+        tty: true
+        image: postgres
+        stdin_open: true
+        volumes:
+          - fidus-db:/var/lib/postgresql/data
+        environment:
+            POSTGRES_PASSWORD: password
+            POSTGRES_USER: user
+            POSTGRES_DB: name
+
+    fiduswriter:
+        tty: true
+        # image: dalareo/fiduswriter
+        build: .
+        stdin_open: true
+        links:
+          - postgresql
+        volumes:
+          - fidus-data:/fiduswriter
+        command: python manage.py runserver
+        environment:
+            CONTACT_EMAIL: mail@example.com
+            DB_NAME: name
+            DB_USER: user
+            DB_PASS: password
+            DB_HOST: postgresql
+            SMTP_HOST: smtp.example.com
+            SMTP_USER: mail@example.com
+            SMTP_PASS: password
+            SMTP_PORT: 25
+            TLS_TRUE: 'False'
+            EMAIL_FROM: mail@example.com
+            ADMIN_NAME: Admin
+            HOSTNAME: subdomain.example.com
+volumes:
+    fidus-db:
+    fidus-data:
