@@ -22,7 +22,7 @@ services:
         links:
           - postgresql
         volumes:
-          - fidus-data:/fiduswriter
+          - fidus-data:/code
         command: python manage.py runserver
         environment:
             CONTACT_EMAIL: mail@example.com
