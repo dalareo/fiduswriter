@@ -30,6 +30,7 @@ services:
             DB_USER: user
             DB_PASS: password
             DB_HOST: postgresql
+            DB_PORT: 5432
             SMTP_HOST: smtp.example.com
             SMTP_USER: mail@example.com
             SMTP_PASS: password
