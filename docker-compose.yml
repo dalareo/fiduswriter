@@ -14,8 +14,8 @@ services:
 
     fiduswriter:
         tty: true
-        # image: dalareo/fiduswriter
-        build: .
+        image: dalareo/fiduswriter
+        # build: .
         stdin_open: true
         ports:
           - 8000:8000

@@ -14,12 +14,12 @@ VOLUME ["/code"]
 
 ADD requirements.txt /code/
 ADD postgresql-requirements.txt /code/
+ADD configuration.py-default /code/configuration.py
 
 RUN pip install -r requirements.txt
 RUN pip install -r postgresql-requirements.txt
 
 ADD . /code
-RUN cp configuration.py-default configuration.py
 
 RUN ./manage.py init
 
