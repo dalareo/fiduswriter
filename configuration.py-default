@@ -47,7 +47,7 @@ DATABASES = {
 # Not used with sqlite3.
        'PASSWORD': os.environ.get('DB_PASS'),
 # Set to empty string for localhost. Not used with sqlite3.
-       'HOST': 'os.environ.get('DB_HOST'),
+       'HOST': os.environ.get('DB_HOST'),
 # Set to empty string for default. Not used with sqlite3.
        'PORT': '5432',
 # The max time in seconds a database connection should wait for a subsequent
